@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adventure name="Test" author="Ian Duncan" description="A test adventure game" images="false" firstpage="page1">
+	<page id="page1" image="">
+		This is a test page. (Page 1)
+		It contains lots of content.
+		<action to="page2" required="" text="Page 2" id="page1page1"></action>
+	</page>
+	<page id="page2" image="">
+		This is another test page. (Page 2)
+		<action to="page1" required="" text="Page 1" id="page2page2"></action>
+	</page>
+
+	<!-- Inventory -->
+	<inventory>
+		<item id="test1" name="Test Item" haveit="true"/>
+	</inventory>
+</adventure>
