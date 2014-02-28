@@ -63,6 +63,16 @@ namespace XMLAdventureGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dialog_error {
+            get {
+                object obj = ResourceManager.GetObject("dialog-error", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap F201401081319571852331635 {
             get {
                 object obj = ResourceManager.GetObject("F201401081319571852331635", resourceCulture);

@@ -50,6 +50,18 @@
     <Compile Include="AGWindow.Designer.cs">
       <DependentUpon>AGWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Error.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Error.Designer.cs">
+      <DependentUpon>Error.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorInfo.Designer.cs">
+      <DependentUpon>ErrorInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="InventoryWin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +72,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AGWindow.resx">
       <DependentUpon>AGWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Error.resx">
+      <DependentUpon>Error.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorInfo.resx">
+      <DependentUpon>ErrorInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InventoryWin.resx">
       <DependentUpon>InventoryWin.cs</DependentUpon>
@@ -95,6 +113,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\F201401081319571852331635.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dialog-error.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

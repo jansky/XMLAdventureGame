@@ -16,6 +16,9 @@ namespace XMLAdventureGame
 {
     public partial class AGWindow : Form
     {
+        AdventureGame Game;
+       
+
         public AGWindow()
         {
             InitializeComponent();
@@ -30,33 +33,133 @@ namespace XMLAdventureGame
 
         private void AGWindow_Load(object sender, EventArgs e)
         {
-            //Let's load a test adventure game
-            var serializer = new XmlSerializer(typeof(AdventureGameReader.AdventureGame));
-            using (var reader = XmlReader.Create("test.xmlag"))
+            string[] args = Environment.GetCommandLineArgs();
+            if(args == null || args.Length <= 1)
             {
-                var testGame = (AdventureGameReader.AdventureGame)serializer.Deserialize(reader);
-               
-                //Load the first page
-                string firstPageId = testGame.FirstPage;
-
-                foreach(Page p in testGame.Pages)
+                try
                 {
-                    if(p.ID == firstPageId)
+                    if (openAdventureGameDialog.ShowDialog() == DialogResult.OK)
                     {
-                        //Load first page text
-                        pageText.Text = p.Text;
+                        //Let's load an adventure game
+                        var AGserializer = new XmlSerializer(typeof(AdventureGame));
 
-                        //Populate action list box with actions from first page
-                        foreach(AGAction a in p.AGActions)
-                        {
-                            ListViewItem lvi = new ListViewItem(a.Text);
-                            lvi.Tag = a.ID;
+                        var reader = XmlReader.Create(openAdventureGameDialog.FileName);
+                        
+                            var testGame = (AdventureGameReader.AdventureGame)AGserializer.Deserialize(reader);
 
-                            actionBox.Items.Add(lvi);
-                        }
+                            //Load the first page
+                            string firstPageId = testGame.FirstPage;
+                            bool foundFirstPage = false;
+
+                            foreach (Page p in testGame.Pages)
+                            {
+                                if (p.ID == firstPageId)
+                                {
+                                    //Load first page text
+                                    pageText.Text = p.Text;
+
+                                    //Populate action list box with actions from first page
+                                    foreach (AGAction a in p.AGActions)
+                                    {
+                                        ListViewItem lvi = new ListViewItem(a.Text);
+                                        lvi.Tag = a.ID;
+
+                                        actionBox.Items.Add(lvi);
+                                    }
+
+                                    foundFirstPage = true;
+
+
+                                }
+                            }
+
+                            //If the first page wasn't found, throw an exception.
+                            if (foundFirstPage == false)
+                            {
+                                throw new Exception("Could not find a page with an ID of \'" + testGame.FirstPage + "\'. Could not display first page.");
+                            }
+
+                            Game = testGame;
+                            this.Text = Game.Name;
+                            //We're done.
+                        
+
+                    }
+                }
+                catch(Exception ex)
+                {
+                    Error er = new Error();
+                    
+                    er.doErrorMsg("There was an error loading the adventure game.", ex);
+                    if(er.ShowDialog() == DialogResult.Abort)
+                    {
+                        Application.Exit();
                     }
                 }
             }
+            else
+            {
+                try
+                {
+                    
+                        //Let's load an adventure game
+                        var AGserializer = new XmlSerializer(typeof(AdventureGame));
+
+                        var reader = XmlReader.Create(args[1]);
+
+                        var testGame = (AdventureGameReader.AdventureGame)AGserializer.Deserialize(reader);
+
+                        //Load the first page
+                        string firstPageId = testGame.FirstPage;
+                        bool foundFirstPage = false;
+
+                        foreach (Page p in testGame.Pages)
+                        {
+                            if (p.ID == firstPageId)
+                            {
+                                //Load first page text
+                                pageText.Text = p.Text;
+
+                                //Populate action list box with actions from first page
+                                foreach (AGAction a in p.AGActions)
+                                {
+                                    ListViewItem lvi = new ListViewItem(a.Text);
+                                    lvi.Tag = a.ID;
+
+                                    actionBox.Items.Add(lvi);
+                                }
+
+                                foundFirstPage = true;
+
+
+                            }
+                        }
+
+                        //If the first page wasn't found, throw an exception.
+                        if (foundFirstPage == false)
+                        {
+                            throw new Exception("Could not find a page with an ID of \'" + testGame.FirstPage + "\'. Could not display first page.");
+                        }
+
+                        Game = testGame;
+                        this.Text = Game.Name;
+                        //We're done.
+
+
+                    }
+                
+                catch (Exception ex)
+                {
+                    Error er = new Error();
+
+                    er.doErrorMsg("There was an error loading the adventure game.", ex);
+                    if (er.ShowDialog() == DialogResult.Abort)
+                    {
+                        Application.Exit();
+                    }
+                }
+            }
+            
 
         }
     }

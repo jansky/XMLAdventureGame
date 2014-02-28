@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<adventure name="Test" author="Ian Duncan" description="A test adventure game" images="false" firstpage="page1">
+<adventure name="Test" author="Ian Duncan" description="A test adventure game" images="false" firstpage="page2">
 	<page id="page1" image="">
 		This is a test page. (Page 1)
 		It contains lots of content.

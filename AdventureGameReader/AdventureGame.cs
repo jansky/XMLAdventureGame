@@ -57,11 +57,22 @@ namespace AdventureGameReader
     public class AGAction
     {
         //The id of the page we want to go to
+        //Optional
         [XmlAttribute("to")]
         public string To { get; set; }
 
         [XmlAttribute("id")]
         public string ID { get; set; }
+       
+        //The id of the inventory item to receive
+        //Optional
+        [XmlAttribute("get")]
+        public string ItemToGet { get; set; }
+
+        //The id of the inventory item to "use" (i.e. remove from user)
+        //Optional
+        [XmlAttribute("use")]
+        public string ItemToUse { get; set; }
 
         //The id of the inventory item required
         //Optional
