@@ -32,15 +32,16 @@
             this.doActionButton = new System.Windows.Forms.Button();
             this.pageText = new System.Windows.Forms.Label();
             this.actionBox = new System.Windows.Forms.ListView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imageBox = new System.Windows.Forms.PictureBox();
             this.openAdventureGameDialog = new System.Windows.Forms.OpenFileDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.aboutButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox)).BeginInit();
             this.SuspendLayout();
             // 
             // inventoryButton
             // 
             this.inventoryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.inventoryButton.Location = new System.Drawing.Point(677, 410);
+            this.inventoryButton.Location = new System.Drawing.Point(608, 410);
             this.inventoryButton.Name = "inventoryButton";
             this.inventoryButton.Size = new System.Drawing.Size(75, 23);
             this.inventoryButton.TabIndex = 1;
@@ -57,6 +58,7 @@
             this.doActionButton.TabIndex = 3;
             this.doActionButton.Text = "Do Action";
             this.doActionButton.UseVisualStyleBackColor = true;
+            this.doActionButton.Click += new System.EventHandler(this.doActionButton_Click);
             // 
             // pageText
             // 
@@ -79,20 +81,31 @@
             this.actionBox.UseCompatibleStateImageBehavior = false;
             this.actionBox.View = System.Windows.Forms.View.List;
             // 
-            // pictureBox1
+            // imageBox
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(764, 274);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.imageBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.imageBox.Location = new System.Drawing.Point(0, 0);
+            this.imageBox.Name = "imageBox";
+            this.imageBox.Size = new System.Drawing.Size(764, 274);
+            this.imageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.imageBox.TabIndex = 0;
+            this.imageBox.TabStop = false;
             // 
             // openAdventureGameDialog
             // 
             this.openAdventureGameDialog.Filter = "Adventure Games | *.xmlag";
             this.openAdventureGameDialog.Title = "Open Adventure Game";
+            // 
+            // aboutButton
+            // 
+            this.aboutButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.aboutButton.Location = new System.Drawing.Point(689, 410);
+            this.aboutButton.Name = "aboutButton";
+            this.aboutButton.Size = new System.Drawing.Size(75, 23);
+            this.aboutButton.TabIndex = 6;
+            this.aboutButton.Text = "About";
+            this.aboutButton.UseVisualStyleBackColor = true;
+            this.aboutButton.Click += new System.EventHandler(this.aboutButton_Click);
             // 
             // AGWindow
             // 
@@ -100,28 +113,30 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(764, 436);
+            this.Controls.Add(this.aboutButton);
             this.Controls.Add(this.actionBox);
             this.Controls.Add(this.pageText);
             this.Controls.Add(this.doActionButton);
             this.Controls.Add(this.inventoryButton);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.imageBox);
             this.MinimumSize = new System.Drawing.Size(772, 463);
             this.Name = "AGWindow";
             this.Text = "XMLAdventureGame";
             this.Load += new System.EventHandler(this.AGWindow_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imageBox;
         private System.Windows.Forms.Button inventoryButton;
         private System.Windows.Forms.Button doActionButton;
         private System.Windows.Forms.Label pageText;
         private System.Windows.Forms.ListView actionBox;
         private System.Windows.Forms.OpenFileDialog openAdventureGameDialog;
+        private System.Windows.Forms.Button aboutButton;
     }
 }
 

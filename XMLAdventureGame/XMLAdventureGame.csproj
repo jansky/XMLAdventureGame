@@ -44,11 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="AGWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AGWindow.Designer.cs">
       <DependentUpon>AGWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlreadyHaveItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlreadyHaveItem.Designer.cs">
+      <DependentUpon>AlreadyHaveItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Error.cs">
       <SubType>Form</SubType>
@@ -62,16 +74,40 @@
     <Compile Include="ErrorInfo.Designer.cs">
       <DependentUpon>ErrorInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="GetInvItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetInvItem.Designer.cs">
+      <DependentUpon>GetInvItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="InventoryWin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InventoryWin.Designer.cs">
       <DependentUpon>InventoryWin.cs</DependentUpon>
     </Compile>
+    <Compile Include="MissingInvItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MissingInvItem.Designer.cs">
+      <DependentUpon>MissingInvItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UseInvItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UseInvItem.Designer.cs">
+      <DependentUpon>UseInvItem.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AGWindow.resx">
       <DependentUpon>AGWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlreadyHaveItem.resx">
+      <DependentUpon>AlreadyHaveItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Error.resx">
       <DependentUpon>Error.cs</DependentUpon>
@@ -79,8 +115,14 @@
     <EmbeddedResource Include="ErrorInfo.resx">
       <DependentUpon>ErrorInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GetInvItem.resx">
+      <DependentUpon>GetInvItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InventoryWin.resx">
       <DependentUpon>InventoryWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MissingInvItem.resx">
+      <DependentUpon>MissingInvItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,6 +134,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UseInvItem.resx">
+      <DependentUpon>UseInvItem.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

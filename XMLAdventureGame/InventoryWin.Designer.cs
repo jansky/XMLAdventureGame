@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "Test Item",
-            "Yes"}, -1);
             this.invList = new System.Windows.Forms.ListView();
             this.itemName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.haveIt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -43,8 +40,6 @@
             this.itemName,
             this.haveIt});
             this.invList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.invList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
             this.invList.Location = new System.Drawing.Point(0, 0);
             this.invList.Name = "invList";
             this.invList.Size = new System.Drawing.Size(352, 317);
@@ -82,6 +77,7 @@
             this.Name = "InventoryWin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Inventory";
+            this.Load += new System.EventHandler(this.InventoryWin_Load);
             this.ResumeLayout(false);
 
         }
